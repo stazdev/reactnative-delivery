@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import { useFonts } from "expo-font";
 
-export default function App() {
+import { OnBoarding, SignIn, SignUp, ForgotPassword, Otp } from "./screens";
+
+const Stack = createStackNavigator();
+
+const App = () => {
+  const [loaded] = useFonts({
+    "Poppins-Regular": require("./assets/fonts/Poppins-Regular.ttf"),
+    "Poppins-Bold": require("./assets/fonts/Poppins-Bold.ttf"),
+    "Poppins-SemiBold": require("./assets/fonts/Poppins-SemiBold.ttf"),
+    "Poppins-Black": require("./assets/fonts/Poppins-Black.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+        initialRouteName={"OnBoarding"}
+      >
+        <Stack.Screen name="OnBoarding" component={OnBoarding} />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+        <Stack.Screen name="SignIn" component={SignIn} />
+
+        <Stack.Screen name="SignUp" component={SignUp} />
+
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+
+        <Stack.Screen name="Otp" component={Otp} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default App;
