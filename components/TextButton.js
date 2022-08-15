@@ -4,9 +4,11 @@ import { COLORS, FONTS } from "../constants";
 
 const TextButton = ({
   label,
+  label2,
   disabled,
   buttonContainerStyle,
   labelStyle,
+  label2Style,
   onPress,
 }) => {
   return (
@@ -23,6 +25,20 @@ const TextButton = ({
       <Text style={{ color: "white", ...FONTS.h3, ...labelStyle }}>
         {label}
       </Text>
+
+      {/* {label2 !== "" && (
+        <Text
+          style={{
+            flex: 1,
+            textAlign: "center",
+            color: COLORS.white,
+            ...FONTS.h3,
+            ...label2Style,
+          }}
+        >
+          {label2}
+        </Text>
+      )} */}
     </TouchableOpacity>
   );
 };

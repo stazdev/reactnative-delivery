@@ -109,6 +109,7 @@ const SignIn = ({ navigation }) => {
             //   ? COLORS.primary
             //   : COLORS.transparentPrimary,
           }}
+          onPress={() => navigation.navigate("CustomDrawer")}
         />
 
         {/* signup section */}
