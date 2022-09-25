@@ -13,6 +13,7 @@ const TextButton = ({
 }) => {
   return (
     <TouchableOpacity
+      activeOpacity={0.8}
       style={{
         alignItems: "center",
         justifyContent: "center",

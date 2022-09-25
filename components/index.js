@@ -10,6 +10,10 @@ import CartQuantityButton from "./CartQuantityButton";
 import IconLabel from "./IconLabel";
 import LineDivider from "./LineDivider";
 import StepperInput from "./StepperInput";
+import FooterTotal from "./FooterTotal";
+import CardItem from "./CardItem";
+import FormInputCheck from "./FormInputCheck";
+import RadioButton from "./RadioButton";
 
 export {
   TextButton,
@@ -24,4 +28,8 @@ export {
   IconLabel,
   LineDivider,
   StepperInput,
+  FooterTotal,
+  CardItem,
+  FormInputCheck,
+  RadioButton,
 };
