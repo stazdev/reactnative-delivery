@@ -38,22 +38,7 @@ const Notification = ({ navigation }) => {
             <Image source={icons.menu} />
           </TouchableOpacity>
         }
-        // rightComponent={
-        //   <TouchableOpacity
-        //     style={{
-        //       alignItems: "center",
-        //       justifyContent: "center",
-
-        //       borderRadius: SIZES.radius,
-        //     }}
-        //     activeOpacity={0.8}
-        //   >
-        //     <Image
-        //       source={dummyData?.myProfile?.profile_image}
-        //       style={{ width: 40, height: 40, borderRadius: SIZES.radius }}
-        //     />
-        //   </TouchableOpacity>
-        // }
+        rightComponent={<View style={{ width: 40 }} />}
       />
     </View>
   );

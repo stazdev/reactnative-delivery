@@ -12,6 +12,12 @@ import {
   Otp,
   FoodDetail,
   CartTab,
+  MyCard,
+  AddCard,
+  Checkout,
+  Success,
+  DeliveryStatus,
+  Map,
 } from "./screens";
 import CustomDrawer from "./navigation/CustomDrawer";
 import { TabProvider } from "./context/TabContext";
@@ -50,6 +56,16 @@ const App = () => {
           <Stack.Screen name="CustomDrawer" component={CustomDrawer} />
           <Stack.Screen name="FoodDetail" component={FoodDetail} />
           <Stack.Screen name="CartTab" component={CartTab} />
+          <Stack.Screen name="MyCard" component={MyCard} />
+          <Stack.Screen name="AddCard" component={AddCard} />
+          <Stack.Screen name="Checkout" component={Checkout} />
+          <Stack.Screen name="DeliveryStatus" component={DeliveryStatus} />
+          <Stack.Screen name="Map" component={Map} />
+          <Stack.Screen
+            name="Success"
+            component={Success}
+            // gestureEnabled={false}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </TabProvider>
