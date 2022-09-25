@@ -1,8 +1,10 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React, { useContext, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import { COLORS, dummyData, FONTS, icons, SIZES } from "../../constants";
 import {
   CartQuantityButton,
+  FooterTotal,
   Header,
   IconButton,
   StepperInput,
@@ -10,9 +12,10 @@ import {
 import { SwipeListView } from "react-native-swipe-list-view";
 import { TabContext } from "../../context/TabContext";
 
-const MyCart = ({ navigation }) => {
+const MyCart = () => {
   const { selectedTab } = useContext(TabContext);
   const [myCartList, setMyCartList] = useState(dummyData.myCart);
+  const navigation = useNavigation();
 
   function updateQuantityHandler(newQty, id) {
     const newMyCartList = myCartList.map((cl) =>
@@ -31,7 +34,7 @@ const MyCart = ({ navigation }) => {
   function renderHeader() {
     return (
       <Header
-        title={selectedTab.toUpperCase()}
+        title={"MY CART"}
         containerStyle={{
           height: 50,
           marginHorizontal: SIZES.padding,
@@ -157,6 +160,12 @@ const MyCart = ({ navigation }) => {
     >
       {renderHeader()}
       {renderCartList()}
+      <FooterTotal
+        subTotal={50.99}
+        shippingFee={1}
+        total={50.99}
+        onPress={() => navigation.navigate("MyCard")}
+      />
     </View>
   );
 };
